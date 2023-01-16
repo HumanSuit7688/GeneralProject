@@ -52,15 +52,18 @@ def every_let(word_list, hit):
                         snd1.append('твёрдый непарный, ')
                     elif s == 'щ' or s == 'ч' or s == 'й':
                         snd1.append('мягкий непарный, ')
+                        snd1[0] = f"{s}'"
                     elif index == 0:
-                        if index_snd + 1 in special_vowels or index_snd + 1 in nn_let or index_snd + 1 == 'и':
+                        if word_list[1] in special_vowels or word_list[1] == 'ь' or word_list[1] == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
                     elif index > 0:
                         index_snd = word_list.index(s, index)
-                        if index_snd + 1 in special_vowels or index_snd + 1 in nn_let or index_snd + 1 == 'и':
+                        if index_snd + 1 in special_vowels or index_snd + 1 == 'ь' or index_snd + 1 == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
                 elif s in vo_co_undouble:
@@ -69,15 +72,18 @@ def every_let(word_list, hit):
                         snd1.append('твёрдый непарный, ')
                     elif s == 'щ' or s == 'ч' or s == 'й':
                         snd1.append('мягкий непарный, ')
+                        snd1[0] = f"{s}'"
                     elif index == 0:
-                        if index_snd + 1 in special_vowels or index_snd + 1 in nn_let or index_snd + 1 == 'и':
+                        if word_list[1] in special_vowels or word_list[1] == 'ь' or word_list[1] == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
                     elif index > 0:
                         index_snd = word_list.index(s, index)
-                        if index_snd + 1 in special_vowels or index_snd + 1 in nn_let or index_snd + 1 == 'и':
+                        if index_snd + 1 in special_vowels or index_snd + 1 == 'ь' or index_snd + 1 == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
             elif s in dull_cons:
@@ -87,15 +93,18 @@ def every_let(word_list, hit):
                         snd1.append('твёрдый непарный, ')
                     elif s == 'щ' or s == 'ч' or s == 'й':
                         snd1.append('мягкий непарный, ')
+                        snd1[0] = f"{s}'"
                     elif index == 0:
-                        if word_list[1] in special_vowels or word_list[1] == 'и':
+                        if word_list[1] in special_vowels or word_list[1] == 'ь' or word_list[1] == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
                     elif index > 0:
                         index_snd = word_list.index(s, index)
-                        if index_snd + 1 in special_vowels or index_snd + 1 == 'и':
+                        if index_snd + 1 in special_vowels or index_snd + 1 == 'ь' or index_snd + 1 == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
                 elif s in du_co_undouble:
@@ -104,15 +113,18 @@ def every_let(word_list, hit):
                         snd1.append('твёрдый непарный, ')
                     elif s == 'щ' or s == 'ч' or s == 'й':
                         snd1.append('мягкий непарный, ')
+                        snd1[0] = f"{s}'"
                     elif index == 0:
-                        if word_list[1] in special_vowels or word_list[1] == 'и':
+                        if word_list[1] in special_vowels or word_list[1] == 'ь' or word_list[1] == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
                     elif index > 0:
                         index_snd = word_list.index(s, index)
-                        if index_snd + 1 in special_vowels or index_snd + 1 == 'и':
+                        if index_snd + 1 in special_vowels or index_snd + 1 == 'ь' or index_snd + 1 == 'и':
                             snd1.append('мягкий парный, ')
+                            snd1[0] = f"{s}'"
                         else:
                             snd1.append("твёрдый парный, ")
         elif s in vowels:
