@@ -137,6 +137,8 @@ def every_let(word_list, hit):
             elif index_v != hit:
                 snd1.append("безударный")
         elif s in nn_let:
+            snd1.append(s)
+            snd1.append(f'[ ]')
             snd1.append('а вот ничего')
         snd.append(snd1)
         index += 1
