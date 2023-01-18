@@ -236,4 +236,3 @@ def every_let(word_list, hit):
         snd.append(snd1)
         index += 1
     return snd
-

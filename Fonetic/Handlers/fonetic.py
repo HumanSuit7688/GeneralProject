@@ -1,5 +1,4 @@
 from aiogram import Dispatcher, types
-
 from Fonetic.Modules.func_back_end import sound_count, every_let, list
 from Fonetic.Modules.info_back_end import special_vowels, vowels
 
@@ -18,7 +17,6 @@ async def cmd_fonetic(msg: types.Message):
     ev_let = every_let(word_list, hit)
     output = ''
     try:
-
         index = 0
         for p in ev_let:
             if p[0] in special_vowels:
