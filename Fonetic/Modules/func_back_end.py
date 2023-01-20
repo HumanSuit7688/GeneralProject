@@ -138,7 +138,28 @@ def every_let(word_list, hit):
             elif s in dull_cons:
                 if s in du_co_double:
                     index_du = word_list.index(s, index)
-                    if word_list[index_du+1] in voice_cons:
+                    if word_list[index_du+1] in vo_co_undouble:
+                        snd1.append('глухой (парный), ')
+                        if s == 'ш' or s == 'ж' or s == 'ц':
+                            snd1.append('твёрдый (непарный), ')
+                        elif s == 'щ' or s == 'ч' or s == 'й':
+                            snd1.append('мягкий (непарный), ')
+                            snd1[1] = f"[{s}'] - "
+                        elif index == 0:
+                            if word_list[1] in special_vowels or word_list[1] == 'ь' or word_list[1] == 'и':
+                                snd1.append('мягкий (парный), ')
+                                snd1[1] = f"[{s}'] - "
+                            else:
+                                snd1.append("твёрдый (парный), ")
+                        elif index > 0:
+                            index_snd = word_list.index(s, index)
+                            if word_list[index_snd + 1] in special_vowels or word_list[index_snd + 1] == 'ь' or \
+                                    word_list[index_snd + 1] == 'и':
+                                snd1.append('мягкий (парный), ')
+                                snd1[1] = f"[{s}'] - "
+                            else:
+                                snd1.append("твёрдый (парный), ")
+                    elif word_list[index_du+1] in voice_cons:
                         snd1.append('звонкий (парный), ')
                         a = du_co_doub.get(s)
                         snd1[1] = f'[{a}] - '
