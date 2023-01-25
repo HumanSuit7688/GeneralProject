@@ -35,7 +35,7 @@ def fonetic(page: ft.Page):
 
         word_text.value = (f'{amount_sl}\n'
                            f'{output}')
-        return word_text
+        page.update()
 
     prompt = ft.TextField(hint_text='Ваше слово')
     word_text = ft.Text(f'')
@@ -50,4 +50,8 @@ def fonetic(page: ft.Page):
             word_text
         ])
     ])
+    page.update()
 
+
+
+ft.app(target=fonetic)
