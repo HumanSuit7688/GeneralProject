@@ -2,6 +2,7 @@ import flet as ft
 from Fonetic.Modules.func_back_end import sound_count, list, every_let
 from Fonetic.Modules.info_back_end import special_vowels, vowels
 
+
 def fonetic(page: ft.Page):
     page.title('Фонетический разбор слова')
 
