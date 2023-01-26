@@ -1,4 +1,7 @@
-from Fonetic.Modules.info_back_end import  vowels, consonants, nn_let, special_vowels, spec_vow_key, voice_cons, vo_co_double, vo_co_undouble, dull_cons, du_co_double, du_co_undouble, vo_co_doub, du_co_doub
+from Fonetic.Modules.info_back_end import  vowels,\
+    consonants, nn_let, special_vowels, spec_vow_key,\
+    voice_cons, vo_co_double, vo_co_undouble, dull_cons,\
+    du_co_double, du_co_undouble, vo_co_doub, du_co_doub
 
 
 def list(word):             # Первая функия
