@@ -1,18 +1,18 @@
 from Fonetic.Modules.info_back_end import  vowels, consonants, nn_let, special_vowels, spec_vow_key, voice_cons, vo_co_double, vo_co_undouble, dull_cons, du_co_double, du_co_undouble, vo_co_doub, du_co_doub
 
 
-def list(word):
-    word_list = []
-    for i in word:
+def list(word):             # Первая функия
+    word_list = []          # Создание списка
+    for i in word:          # Цикл
         word_list.append(i)
-    return word_list
+    return word_list        # Окончание, возвращение списка
 
 
-def sound_count(word_list):
+def sound_count(word_list):         # Вторая функция
     sound_quant = 0
-    letter_quant = len(word_list)
+    letter_quant = len(word_list)   # Подсчет количества букв в слова
     index = 0
-    for i in word_list:
+    for i in word_list:             # Цикл, считающий количесво звуков в слове
         if i in consonants:
             sound_quant += 1
         elif i in vowels:
@@ -30,8 +30,8 @@ def sound_count(word_list):
         elif i in nn_let:
             pass
         index += 1
-    result = f'{letter_quant} букв и {sound_quant} звуков'
-    return result
+    result = f'{letter_quant} букв и {sound_quant} звуков'      # Формирование конечного вывода
+    return result                                               # Возвращение итогового результата
 
 
 def every_let(word_list, hit):
@@ -57,12 +57,6 @@ def every_let(word_list, hit):
                         elif a == 'щ' or a == 'ч' or a == 'й':
                             snd1.append('мягкий (непарный), ')
                             snd1[1] = f"[{a}'] - "
-                        # elif index == 0:
-                        #     if word_list[1] in special_vowels or word_list[1] == 'ь' or word_list[1] == 'и':
-                        #         snd1.append('мягкий (парный), ')
-                        #         snd1[1] = f"[{a}'] - "
-                        #     else:
-                        #         snd1.append("твёрдый (парный), ")
                         elif index > 0:
                             index_snd = word_list.index(s, index)
                             if word_list[index_snd + 1] in special_vowels or word_list[index_snd + 1] == 'ь' or \
@@ -71,7 +65,6 @@ def every_let(word_list, hit):
                                 snd1[1] = f"[{a}'] - "
                             else:
                                 snd1.append("твёрдый (парный), ")
-                    # snd1.append('звонкиий (парный), ')
                     elif word_list[index_vo + 1] in dull_cons:
                         snd1.append('глухой (парный), ')
                         a = vo_co_doub.get(s)
