@@ -2,6 +2,7 @@ import config
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from Fonetic.Handlers.fonetic import register_handlers_fonetic
+from background import keep_alive
 
 
 bot = Bot(token=config.TOKEN)
@@ -15,4 +16,5 @@ async def main():
 
 
 if __name__ == '__main__':
+    keep_alive()
     asyncio.run(main())
