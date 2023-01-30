@@ -4,13 +4,14 @@ from Fonetic.Modules.info_back_end import special_vowels, vowels
 
 
 def fonetic(page: ft.Page):
-    page.title('Фонетический разбор слова')
+    # page.title('Fonetic')
 
     def main_func(e):
-        word = prompt.value
+        word = prompt.value[:-2]
+        hit = int(prompt.value[-1:])
         word_list = list(word)
         amount_sl = sound_count(word_list)
-        main_sl = every_let(word_list)
+        main_sl = every_let(word_list, hit)
         output = ''
         try:
             index = 0
@@ -37,21 +38,27 @@ def fonetic(page: ft.Page):
                            f'{output}')
         page.update()
 
-    prompt = ft.TextField(hint_text='Ваше слово')
-    word_text = ft.Text(f'')
+    prompt = ft.TextField(hint_text='Ваше слово', shift_enter=True, on_submit=main_func)
+    word_text = ft.Text(size=24, value=f'')
 
     x = ft.Column(controls=[
-        ft.Row(controls=[
+        ft.Row(alignment=ft.MainAxisAlignment.CENTER, controls=[
+            ft.Text(size=20, value='Привет, я могу сделать для тебя фонетический разбор слова!\n'
+                    'Тебе нужно написать слово с маленькой буквы и через пробел номер ударного слога\n'
+                    'Вот так: "слово n"')
+        ]),
+        ft.Row(alignment=ft.MainAxisAlignment.CENTER, controls=[
             prompt,
             ft.ElevatedButton(text='>>',
-                              on_click=main_func)
+                              on_click=main_func,
+                              )
         ]),
-        ft.Row(controls=[
+        ft.Row(alignment=ft.MainAxisAlignment.CENTER, controls=[
             word_text
         ])
     ])
+    page.add(x)
     page.update()
 
 
-
-ft.app(target=fonetic)
+ft.app(target=fonetic, view=ft.WEB_BROWSER)
